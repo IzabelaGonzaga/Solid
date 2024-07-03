@@ -1,4 +1,4 @@
-﻿namespace Solid
+﻿namespace Solid.Biblioteca.Entidades
 {
     public class Biblioteca
     {
@@ -7,8 +7,8 @@
 
         public Biblioteca()
         {
-            this.livros = new List<Livro>();
-            this.registrosEmprestimo = new Dictionary<string, RegistroEmprestimo>();
+            livros = new List<Livro>();
+            registrosEmprestimo = new Dictionary<string, RegistroEmprestimo>();
         }
 
         // Métodos relacionados ao gerenciamento de livros
@@ -59,43 +59,5 @@
             }
             return 0.0;
         }
-
-        // Métodos relacionados ao armazenamento em banco de dados
-        public void SalvarDadosBiblioteca()
-        {
-            // Código para salvar dados da biblioteca no banco de dados
-        }
-
-        public void CarregarDadosBiblioteca()
-        {
-            // Código para carregar dados da biblioteca do banco de dados
-        }
-
-        // Métodos relacionados à geração de relatórios
-        public void GerarRelatorio()
-        {
-            // Código para gerar relatório de status da biblioteca
-        }
     }
-
-    public class Livro
-    {
-        public string Titulo { get; set; }
-        public string Autor { get; set; }
-    }
-
-    public class RegistroEmprestimo
-    {
-        public string UsuarioId { get; }
-        public Livro Livro { get; }
-        public DateTime DataEmprestimo { get; }
-
-        public RegistroEmprestimo(string usuarioId, Livro livro, DateTime dataEmprestimo)
-        {
-            UsuarioId = usuarioId;
-            Livro = livro;
-            DataEmprestimo = dataEmprestimo;
-        }
-    }
-
 }

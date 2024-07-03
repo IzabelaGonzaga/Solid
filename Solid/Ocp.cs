@@ -1,49 +1,5 @@
 ﻿namespace Solid
-{
-    public interface IDesconto
-    {
-        double Calcular(double valorCompra);
-    }
-
-    public class DescontoRegular : IDesconto
-    {
-        public double Calcular(double valorCompra)
-        {
-            return valorCompra * 0.05;
-        }
-    }
-
-    public class DescontoPremium : IDesconto
-    {
-        public double Calcular(double valorCompra)
-        {
-            return valorCompra * 0.10;
-        }
-    }
-
-    public class DescontoVIP : IDesconto
-    {
-        public double Calcular(double valorCompra)
-        {
-            return valorCompra * 0.15;
-        }
-    }
-
-    public class CalculadoraPreco
-    {
-        private readonly IDesconto desconto;
-
-        public CalculadoraPreco(IDesconto desconto)
-        {
-            this.desconto = desconto;
-        }
-
-        public double CalcularPreco(double valorCompra)
-        {
-            return valorCompra - desconto.Calcular(valorCompra);
-        }
-    }
-
+{ 
     //public partial class Program
     //{
     //    public static void Main()
